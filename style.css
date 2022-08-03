@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(91, 13, 89)
+}
+
+span{
+    font-size: .9rem;
+    color: #757573;
+}
+
+h6{
+    font-size: 1.1rem;
+    color: rgb(37, 9, 36)
+}
+
+nav{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1vw 8vw;
+    box-shadow: 2px 2px 10px rgb(0, 0, 0, 0.1);
+}
+
+nav img{
+    height: 70px;
+    width: 70px;
+    cursor: pointer;
+}
+
+nav .navigation ul{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav .navigation ul li{
+    list-style: none;
+    margin-left: 30px;
+}
+
+nav .navigation ul li a{
+    text-decoration: none;
+    color: rgb(91, 13, 89);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+nav .navigation ul li a:hover{
+    color: rgb(235, 152, 220);
+    transition: 0.3s ease;
+}
+
+#home{
+    background-image: linear-gradient(rgba(9, 5, 54, 0.005), rgba(9, 5, 54, 0.005)), url("images/header_image.png");
+    width:100%;
+    height:100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+#home h2{
+    color: rgb(95, 4, 78);
+    font-size: 3rem;
+    letter-spacing: 1px;
+}
+
+#home p{
+    width: 50%;
+    color: rgb(95, 4, 78);
+    font-size: 1.2rem;
+    line-height: 25px;
+}
+
+#home .btn{
+    margin-top: 30px;
+}
+
+#home a{
+    color: rgb(235, 152, 220);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 13px 35px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+#home a.pink{
+    background-color: rgb(95, 4, 78);
+}
+
+#features {
+    padding: 5vw 8vw 0 8vw;
+    text-align: center;
+}
+
+#features .feabase{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+    margin-top: 50px;
+}
+#features .feabox{
+    background: #f9f9ff;
+    text-align: start;
+}
+
+#features .feabox i{
+    font-size: 2.3rem;
+    color: rgb(95, 4, 78);
+}
+
+#features .feabox h3{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(95, 4, 78);
+    padding: 13px 0 7px 0;
+}
+
+#features .feabox p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(95, 4, 78);
+    padding: 13px 0 7px 0;
+}
+
+.wrapper{ 
+    display: grid; /*displays the elements inside a box-level grid container*/
+    margin: 120px 70px auto; /*sets the margins or boundaries of the grid*/
+    grid-gap: 5px; /*sets the gap between rows & columns*/
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /*Represents a repeated fragment of the track list, allowing a large number of columns that exhibit a recurring pattern to be written in a more compact form.*/
+  }
+  @media (max-width: 700px) {
+    .wrapper{
+      margin: 120px auto;
+    }
+  }
+  .wrapper .box{
+    width: 280px;
+    margin: 0 auto;
+    position: relative;
+    perspective: 1000px;
+  }
+  .wrapper .box .front-face{
+    background: #fff;
+    height: 220px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0px 5px 20px 0px rgba(0, 81, 250, 0.1);
+    transition: all 0.5s ease;
+  }
+  .box .front-face .icon{
+    height: 80px;
+  }
+  .box .front-face .icon i{
+    font-size: 65px;
+  }
+  .box .front-face span,
+  .box .back-face span{
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: rgb(95, 4, 78);
+  }
+  .box .front-face .icon i,
+  .box .front-face span{
+    background: linear-gradient(-135deg, #e78ee1, hsla(306, 79%, 83%, 0.18));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .box .back-face{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 150px;
+    width: 100%;
+    padding: 30px;
+    color: rgb(95, 4, 78);
+    opacity: 0;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    background: linear-gradient(135deg, #ef9eea, #ef9eea);
+    transform: translateY(110px) rotateX(-90deg);
+    box-shadow: 0px 5px 20px 0px rgba(0, 81, 250, 0.1);
+    transition: all 0.5s ease;
+  }
+  .box .back-face p{
+    margin-top: 10px;
+    text-align: justify;
+  }
+  .box:hover .back-face{
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+  .box:hover .front-face{
+    opacity: 0;
+    transform: translateY(-110px) rotateX(90deg);
+  }
+
+#registration{
+    padding: 6vw 8vw 6vw 8vw;
+    background-image: linear-gradient(rgba(99, 112, 168, 0.5), rgba(99, 112, 168, 0.5)), url("images/header.jpg");
+    width: 84%;
+    height:100%;
+    background-size: cover;
+    background-position: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+#registration .reminder h3{
+    color: #fff;
+}
